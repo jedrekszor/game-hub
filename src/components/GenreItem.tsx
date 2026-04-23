@@ -1,4 +1,4 @@
-import { HStack, ListItem, Image, Text } from "@chakra-ui/react";
+import { HStack, ListItem, Image, Button } from "@chakra-ui/react";
 import type { Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 
@@ -14,7 +14,9 @@ const GenreItem = ({ genre }: Props) => {
           boxSize={"32px"}
           borderRadius={8}
         />
-        <Text fontSize={"lg"}>{genre.name}</Text>
+        <Button fontSize={"lg"} variant={"subtle"}>
+          {genre.name}
+        </Button>
       </HStack>
     </ListItem>
   );

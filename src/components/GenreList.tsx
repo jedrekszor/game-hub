@@ -14,7 +14,7 @@ const GenreList = () => {
         {loading &&
           skeletons.map((skeleton) => <GenreItemSkeleton key={skeleton} />)}
         {data.map((genre) => (
-          <GenreItem genre={genre} />
+          <GenreItem key={genre.id} genre={genre} />
         ))}
       </List.Root>
     </>
