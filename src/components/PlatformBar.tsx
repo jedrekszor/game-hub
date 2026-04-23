@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { BsNintendoSwitch, BsGlobe } from "react-icons/bs";
+import { SiSega } from "react-icons/si";
 import type { Platform } from "../hooks/useGames";
 import type { IconType } from "react-icons";
 
@@ -26,13 +27,21 @@ const PlatformBar = ({ platforms }: Props) => {
     ios: MdPhoneIphone,
     nintendo: BsNintendoSwitch,
     web: BsGlobe,
+    sega: SiSega,
   };
 
   return (
     <HStack marginY={1.5}>
-      {platforms.map((platform) => (
-        <Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500" />
-      ))}
+      {platforms.map((platform) => {
+        console.log(platform);
+        return (
+          <Icon
+            key={platform.id}
+            as={iconMap[platform.slug]}
+            color="gray.500"
+          />
+        );
+      })}
     </HStack>
   );
 };
