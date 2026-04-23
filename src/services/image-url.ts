@@ -1,4 +1,4 @@
-const croppedImageUrl = (url: string) => {
+const getCroppedImageUrl = (url: string) => {
   const target = "/games";
   const index = url.indexOf(target);
   const temp = url.slice(0, index) + "/crop/600/400" + url.slice(index);
@@ -6,4 +6,4 @@ const croppedImageUrl = (url: string) => {
   return temp;
 };
 
-export default croppedImageUrl;
+export default getCroppedImageUrl;
