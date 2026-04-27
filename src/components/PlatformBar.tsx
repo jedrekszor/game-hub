@@ -9,9 +9,10 @@ import {
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { BsNintendoSwitch, BsGlobe } from "react-icons/bs";
-import { SiSega } from "react-icons/si";
+import { SiAtari, SiCommodore, SiSega, SiWeb3Dotjs } from "react-icons/si";
 import type { Platform } from "../hooks/useGames";
 import type { IconType } from "react-icons";
+import { TiImageOutline } from "react-icons/ti";
 
 interface Props {
   platforms: Platform[];
@@ -28,6 +29,10 @@ const PlatformBar = ({ platforms }: Props) => {
     nintendo: BsNintendoSwitch,
     web: BsGlobe,
     sega: SiSega,
+    "commodore-amiga": SiCommodore,
+    atari: SiAtari,
+    "3do": SiWeb3Dotjs,
+    "neo-geo": TiImageOutline,
   };
 
   return (
