@@ -16,7 +16,7 @@ const PlatformSelector = ({ onPlatformSelect, selectedPlatform }: Props) => {
     <Menu.Root>
       <Menu.Trigger asChild>
         <Button variant={"outline"}>
-          {selectedPlatform !== null ? selectedPlatform.name : "Platforms"}{" "}
+          {selectedPlatform?.name || "Platforms"}
           <BsChevronDown />
         </Button>
       </Menu.Trigger>
