@@ -38,7 +38,6 @@ const PlatformBar = ({ platforms }: Props) => {
   return (
     <HStack marginY={1.5}>
       {platforms.map((platform) => {
-        console.log(platform);
         return (
           <Icon
             key={platform.id}

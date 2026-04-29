@@ -11,7 +11,7 @@ const ColorModeSwtich = () => {
     >
       <Switch.HiddenInput />
       <Switch.Control />
-      <Switch.Label>
+      <Switch.Label whiteSpace={"nowrap"}>
         {colorMode === "dark" ? "Dark Mode" : "Light Mode"}
       </Switch.Label>
     </Switch.Root>

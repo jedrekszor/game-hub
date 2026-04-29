@@ -1,18 +1,18 @@
-import { HStack, Image, Input, InputGroup } from "@chakra-ui/react";
-
-import { LuSearch } from "react-icons/lu";
+import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
 import ColorModeSwtich from "./ColorModeSwtich";
+import SearchInput from "./SearchInput";
 
-const Navbar = () => {
+interface Props {
+  onSearch: (search: string) => void;
+}
+
+const Navbar = ({ onSearch }: Props) => {
   return (
     <>
-      <HStack justifyContent={"space-between"} padding={"10px"}>
+      <HStack padding={"10px"}>
         <Image src={logo} boxSize={"60px"} />
-        <InputGroup startElement={<LuSearch />}>
-          <Input placeholder="Search" />
-        </InputGroup>
-
+        <SearchInput onSearch={onSearch} />
         <ColorModeSwtich />
       </HStack>
     </>
