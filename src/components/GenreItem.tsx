@@ -16,9 +16,13 @@ const GenreItem = ({ genre, onGenreSelect, selectedGenre }: Props) => {
         <Image
           src={getCroppedImageUrl(genre.image_background)}
           boxSize={"32px"}
+          objectFit={"cover"}
           borderRadius={8}
         />
         <Button
+          whiteSpace={"normal"}
+          maxW={"130px"}
+          textAlign={"left"}
           onClick={() => onGenreSelect(genre)}
           variant={isSelected ? "subtle" : "outline"}
           fontWeight={isSelected ? "bold" : "normal"}
