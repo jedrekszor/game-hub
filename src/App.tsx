@@ -1,4 +1,5 @@
 import {
+  Box,
   Grid,
   GridItem,
   HStack,
@@ -13,6 +14,7 @@ import type { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import type { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -37,7 +39,10 @@ function App() {
       }}
     >
       <GridItem area={"nav"}>
-        <Navbar onSearch={(search) => setGameQuery({ ...gameQuery, search })} />
+        <Navbar
+          onSearch={(search) => setGameQuery({ ...gameQuery, search })}
+          onHomeClick={() => setGameQuery({} as GameQuery)}
+        />
       </GridItem>
       <Show when={isLarge}>
         <GridItem area={"side"} paddingX={5}>
@@ -48,20 +53,23 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area={"main"}>
-        <HStack paddingLeft={2} marginBottom={5}>
-          <PlatformSelector
-            onPlatformSelect={(platform) =>
-              setGameQuery({ ...gameQuery, platform })
-            }
-            selectedPlatform={gameQuery.platform}
-          />
-          <SortSelector
-            sortOrder={gameQuery.sortOrder}
-            onSelectSortOrder={(sortOrder) =>
-              setGameQuery({ ...gameQuery, sortOrder })
-            }
-          />
-        </HStack>
+        <Box paddingLeft={2}>
+          <GameHeading gameQuery={gameQuery} />
+          <HStack marginBottom={5}>
+            <PlatformSelector
+              onPlatformSelect={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+              selectedPlatform={gameQuery.platform}
+            />
+            <SortSelector
+              sortOrder={gameQuery.sortOrder}
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuery({ ...gameQuery, sortOrder })
+              }
+            />
+          </HStack>
+        </Box>
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>

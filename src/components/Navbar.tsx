@@ -1,17 +1,20 @@
-import { HStack, Image } from "@chakra-ui/react";
+import { HStack, Image, Button } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
 import ColorModeSwtich from "./ColorModeSwtich";
 import SearchInput from "./SearchInput";
 
 interface Props {
   onSearch: (search: string) => void;
+  onHomeClick: () => void;
 }
 
-const Navbar = ({ onSearch }: Props) => {
+const Navbar = ({ onSearch, onHomeClick }: Props) => {
   return (
     <>
       <HStack padding={"10px"}>
-        <Image src={logo} boxSize={"60px"} />
+        <Button p={0} boxSize={"60px"} onClick={onHomeClick}>
+          <Image src={logo} />
+        </Button>
         <SearchInput onSearch={onSearch} />
         <ColorModeSwtich />
       </HStack>
