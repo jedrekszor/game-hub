@@ -38,7 +38,7 @@ The goal of this project was to build a scalable and maintainable React applicat
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots 
 
 ### 🏠 Home Page
 
