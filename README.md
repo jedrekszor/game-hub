@@ -48,15 +48,13 @@ The goal of this project was to build a scalable and maintainable React applicat
 
 ![Search](./screenshots/search.png)
 
-### 🎮 Game Listings
+### 🎮 Platform Filter
 
 ![Game List](./screenshots/games.png)
 
 ### 📱 Responsive View
 
 ![Mobile](./screenshots/mobile.png)
-
-<!-- > 💡 Tip: Create a `/screenshots` folder in your repo and add images with these names, or update paths accordingly. -->
 
 ---
 
@@ -67,8 +65,7 @@ src/
 ├── components/    # Reusable UI components
 ├── hooks/         # Custom React hooks
 ├── services/      # API logic
-├── types/         # TypeScript definitions
-├── pages/         # Page-level components
+├── data/          # Static data
 └── App.tsx
 ```
 
@@ -106,12 +103,6 @@ To run locally, you may need to:
 1. Create an account at https://rawg.io/apidocs
 2. Generate an API key
 3. Add it to your environment variables
-
-Example:
-
-```
-VITE_RAWG_API_KEY=your_api_key_here
-```
 
 ---
 
